@@ -1,0 +1,39 @@
+.audio_container{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.audio_title{
+  font-size: 14px;
+  font-weight: 700;
+}
+.audio_icon{
+  font-size: 13px;
+  background-color: #EDEDED;
+  border-radius: 3px;
+}
+.playPAUSE_btn_color{
+  color: #D1AD3C !important;
+}
+.audio_icon_container i:hover{
+  color: #D1AD3C;
+}
+
+.mute_icon_block, .unmute_icon_block{
+  display: block;
+}
+.mute_icon_none,.unmute_icon_none{
+  display: none;
+}
+.audio_channel{
+  background-color: #D1AD3C;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.5s;
+}
+.audio_channel:hover{
+  background-color: #2A486C;
+  color: white !important;
+  transition: 0.5s;
+
+}

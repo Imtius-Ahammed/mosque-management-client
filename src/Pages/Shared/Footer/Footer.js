@@ -1,9 +1,14 @@
 import React from 'react';
 
+
 const Footer = () => {
     return (
-        <div>
+        <div className='bg-warning  ' style={{height:'350px'}} >
             <h1>hi</h1>
+            <div>
+        
+      </div>
+           
         </div>
     );
 };

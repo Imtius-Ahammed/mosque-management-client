@@ -12,6 +12,11 @@ import Scolar from '../Scolar/Scolar';
 import Header from '../Shared/Header/Header';
 import Info from '../../Pages/Dashboard/Info';
 
+import KhutbaHome from '../KhutbaHome/KhutbaHome/KhutbaHome';
+
+
+
+
 const Routesin = () => {
     return (
         <div className="App">
@@ -27,7 +32,9 @@ const Routesin = () => {
                 <Route path="/home" element={<Home></Home>}></Route>
                 <Route path='/donate' element={<Donate></Donate>}></Route>
                 <Route path='/scolar' element={<Scolar></Scolar>}></Route>
-
+                <Route path='/addkhutba' element={<KhutbaHome></KhutbaHome>}></Route>
+               
+               
 
                 <Route path="/login" element={<Login></Login>}></Route>
 

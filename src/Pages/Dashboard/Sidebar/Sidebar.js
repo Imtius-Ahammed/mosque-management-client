@@ -29,7 +29,7 @@ const Sidebar = () => {
     const [user] = useAuthState(auth);
     const [admin] = useAdmin(user);
     return (
-        <div className="sidebar">
+        <div className="sidebar toggle">
 
             <div className="top">
                 <Link to="/" style={{ textDecoration: "none" }}>
@@ -107,6 +107,18 @@ const Sidebar = () => {
                             <li>
                                 <PsychologyOutlinedIcon className="icon" />
                                 <span>Add Campaign </span>
+                            </li>
+                        </Link>
+                        <Link to="addKhutba" style={{ textDecoration: "none" }}>
+                            <li>
+                                <PsychologyOutlinedIcon className="icon" />
+                                <span>Add Khutba </span>
+                            </li>
+                        </Link>
+                        <Link to="manageKhutba" style={{ textDecoration: "none" }}>
+                            <li>
+                                <PsychologyOutlinedIcon className="icon" />
+                                <span>ManageKhutba</span>
                             </li>
                         </Link>
 
