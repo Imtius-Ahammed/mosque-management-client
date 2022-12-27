@@ -1,10 +1,47 @@
-import React from 'react';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import React, { useState } from 'react';
+import { Button, Form, Modal } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 import "../../Pages/Dashboard/Info.css"
 const Info = () => {
     const [user] = useAuthState(auth);
     console.log(user)
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+   
+
+    const handleUpdate = async (event) => {
+        event.preventDefault();
+        fetch(`http://localhost:5000/user/${user._id}`,{
+            method:'PUT',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(user)
+
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log(data);
+        })
+
+        // const displayName = event.target.displayName.value;
+        // const email = event.target.email.value;
+        // const phone = event.target.phone.value;
+        // const address = event.target.address.value;
+        // // const agree = event.target.terms.checked;
+        // await createUserWithEmailAndPassword(email, phone, address, displayName)
+        // await updateProfile({ displayName });
+        // console.log('Updated profile');
+        // console.log(event)
+        // // navigate('/home')
+
+
+    }
 
     return (
         // <div className="form-control w-full md:w-9/12 mx-auto bg-base-100 p-5">
@@ -121,8 +158,55 @@ const Info = () => {
                                 <hr />
                                 <div class="row">
                                     <div class="col-sm-12">
-                                        <a class="btn btn-info " target="__blank" href="#">Edit</a>
+                                        <Link class="btn btn-info " to={`/user/${user?.email}`}>Edit</Link>
                                     </div>
+                                    
+
+                                    {/* modal */}
+
+
+                                    <>
+      <Button variant="primary" onClick={handleShow}>
+        Launch demo modal
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <form  style={{width:'80%', marginLeft:"10%", marginTop:"10%"}} onSubmit={handleUpdate}>
+        <div className=" mb-3 ">
+          <label for="text">Name</label>
+          <input type="text" name='displayName' defaultValue={user?.displayName}  className="form-control" placeholder='Your Name' />
+        </div>
+        <div className=" mb-3 ">
+          <label for="email">Email</label>
+          <input    type="email" name="email"  defaultValue={user?.email}  id="1" placeholder='Email Address' required className="form-control"/>
+        </div>
+        <div className=" mb-3">
+          <label for="number">Phone</label>
+          <input  type="number" name="phone" id="2"  required className="form-control "/>
+        </div>
+        <div className=" mb-3">
+          <label for="text">Address</label>
+          <input  type="text" name="address" id="3"  required className="form-control "/>
+        </div>
+        <button className='btn' >Submit</button>
+       
+        
+        
+      </form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          
+        </Modal.Footer>
+      </Modal>
+    </>
+                                  
                                 </div>
                             </div>
                         </div>

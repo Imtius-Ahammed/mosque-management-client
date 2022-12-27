@@ -11,7 +11,7 @@ const SingleEvent = ({ event }) => {
         navigate(`/event/${id}`)
     }
     return (
-        <div class="col-12 col-md-6 col-lg-6 col-xl-6 justify-content-center ">
+        <div class="col-12 col-md-6 col-lg-6 col-xl-6 justify-content-center mb-3">
             <div class="div-card-bg"  >
                 <div class="card_banner card-img-top div-banner-bg"
                     style={{

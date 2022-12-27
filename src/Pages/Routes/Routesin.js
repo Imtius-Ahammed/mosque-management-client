@@ -12,7 +12,8 @@ import Scolar from '../Scolar/Scolar';
 import Header from '../Shared/Header/Header';
 import Info from '../../Pages/Dashboard/Info';
 
-import KhutbaHome from '../KhutbaHome/KhutbaHome/KhutbaHome';
+
+import ListenKhutba from '../ListenKhutba/ListenKhutba';
 
 
 
@@ -32,7 +33,8 @@ const Routesin = () => {
                 <Route path="/home" element={<Home></Home>}></Route>
                 <Route path='/donate' element={<Donate></Donate>}></Route>
                 <Route path='/scolar' element={<Scolar></Scolar>}></Route>
-                <Route path='/addkhutba' element={<KhutbaHome></KhutbaHome>}></Route>
+                <Route path='/listenKhutba' element={<ListenKhutba></ListenKhutba>}></Route>
+                
                
                
 

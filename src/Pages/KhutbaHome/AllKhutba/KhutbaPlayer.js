@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 
 import { toast } from 'react-toastify';
 import Loading from '../../Shared/Loading/Loading';
 import img from '../../../1_images/11_audio-tilwat/1_audio-img2.jpg'
-import Footer from '../../Shared/Footer/Footer';
+
 import '../AllKhutba/KhutbaPlayer.css'
 import onelinee from "../../../1_images/1_home/1_line.png";
 
@@ -92,7 +92,7 @@ const KhutbaPlayer = () => {
         </h5>
 
         <div className="text-center pb-3">
-          <img src={onelinee} />
+          <img src={onelinee} alt=''/>
         </div>
 
         <div className="text-center when_things">
@@ -102,7 +102,7 @@ const KhutbaPlayer = () => {
           </p>
         </div>
       </div>
-      <div>
+      {/* <div>
       {
         allKhutba.map(khutba=> 
         <div key={khutba._id} className='mb-5 m-2 shadow-lg'>
@@ -138,6 +138,45 @@ const KhutbaPlayer = () => {
     
         </div>)
       }
+      </div> */}
+
+
+      <div >
+        <div>
+          <table className='w-75 mx-auto table table-striped shadow mt-5'>
+        <thead>
+              <tr className='bg-dark text-white'>
+                <th scope="col">SL.</th>
+                <th scope="col">About</th>
+                <th scope="col">Speakers</th>
+                <th scope="col">Date</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+          {
+            allKhutba.map((khutba,i)=>  <tr key={khutba._id} class="table">
+           
+           
+              
+                <th scope="row">{i+1}</th>
+                <td>
+                  <p>{khutba.about}</p>
+                  
+
+                </td>
+                <td>{khutba.speaker}</td>
+                <td>{khutba.month}</td>
+                <td><button className='btn btn-warning' onClick={()=>handleDeleteKhutba(khutba)}>Delete</button></td>
+              
+            
+           
+          </tr>)
+          }
+           </tbody>
+          </table>
+        </div>
+    
       </div>
       
       

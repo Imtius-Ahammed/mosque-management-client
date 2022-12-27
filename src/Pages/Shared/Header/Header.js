@@ -35,7 +35,8 @@ const Header = () => {
                         {
                             user && <>
                                 <Nav.Link className='text-light' as={Link} to="allevent">All Event</Nav.Link>
-                                <Nav.Link className='text-light' as={Link} to="addkhutba">Addkhutba</Nav.Link>
+                                <Nav.Link className='text-light' as={Link} to="listenKhutba">ListenKhutba</Nav.Link>
+                               
                                 
 
                                 <Nav.Link className='text-light' as={Link} to="dashboard">Dashboard</Nav.Link>

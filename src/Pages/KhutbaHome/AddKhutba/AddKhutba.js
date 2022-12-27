@@ -54,7 +54,7 @@ const AddKhutba = () => {
         }}
       >
         <h5 className="poppins text-center charity_campaing_heading pt-5 mt-">
-          Khutba
+          AddKhutba
         </h5>
 
         <div className="text-center pb-3">
@@ -64,15 +64,16 @@ const AddKhutba = () => {
         <div className="text-center when_things">
           <p className="poppins donate_home_icon">
             <a href="/">Home</a> /{" "}
-            <span className="charity-text">All Khutba</span>
+            <span className="charity-text">AddKhutba</span>
           </p>
         </div>
       </div>
    
     <form onSubmit={handleAddKhutba}>
-      <div className='container shadow mt-5 p-5'>
+      <div className='container py-5 m-2 mx-auto   shadow my-5'>
     <div className='row'>
-    <div className="mb-3 mx-auto  col-lg-8 col-sm-12 ">
+    <div className="mb-3 py-5 mx-auto shadow col-lg-8 col-sm-12 ">
+      <h1 className='text-center text-warning fw-bold'>Please ADD Jummah Khutba</h1>
     <div >
   <label for="exampleFormControlInput1" className="form-label">Jummah Khutba Data</label>
   <input type="datetime-local" name='month' className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>

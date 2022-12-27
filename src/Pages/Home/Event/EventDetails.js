@@ -32,7 +32,7 @@ const EventDetails = () => {
 
     const { name, img, short_description, date, time, location, orgBy, orgPhone, orgEmail } = event;
     return (
-        <div>
+        <div >
             <div className='home_banner'
                 style={{
                     background: `url(${donatebanner}) `
@@ -52,18 +52,24 @@ const EventDetails = () => {
                 </div>
 
             </div>
-            <div className='container py-4'>
-                <img className='img-fluid' src={img} alt="" />
-                <div className='row md:px-4 py-4 orgSection '>
-                    <div className="col-lg-8 text-start">
+            
+            <div className='container py-4'      style={{
+                    backgroundImage: `url("https://img.freepik.com/free-photo/white-cage-with-beads_23-2147871921.jpg?w=1380&t=st=1672160003~exp=1672160603~hmac=399d3c206db701ec7956f2aa1d8039e510316dfac2b365c74125e321496e1e4a")` ,backgroundRepeat: 'no-repeat',
+                    width:'100%',
+                    backgroundOpacity:'0.5'
+                }}>
+            <div className=" text-center">
                         <h3>{name}</h3>
-                        <p><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon> {location}</p>
+                      
                         <div >
-                            <p><FontAwesomeIcon icon={faClock}></FontAwesomeIcon> {time}</p>
-                            <a class="btn btn-primary px-2 mb-2" href="#" role="button">JOIN NOW</a>
+                        <p><FontAwesomeIcon icon={faLocationDot}></FontAwesomeIcon> {location}, <FontAwesomeIcon icon={faClock}></FontAwesomeIcon> {time}</p>
+                         
+                            
                         </div>
                     </div>
-                    <div className="col-lg-4 text-start">
+                <img className='w-50' src={img} alt="" />
+                <div className='row md:px-4 py-4 orgSection '>
+                <div className="col-lg-4  text-start">
                         <h4>ORGANIZER:</h4>
                         <div className=' text-orange'>
                             <b>By:</b> {orgBy} <br />
@@ -73,9 +79,17 @@ const EventDetails = () => {
 
                         </div>
                     </div>
+                  
+                  
                 </div>
+                <h3 className='fw-bold '>Our Objectives</h3>
+                <hr />
+
                 <div className='text-start'>
                     <p>{short_description}</p>
+                </div>
+                <div>
+                <a class="btn btn-primary px-2 mb-2" href="#" role="button">JOIN NOW</a>
                 </div>
             </div>
         </div>
